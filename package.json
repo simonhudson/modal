@@ -10,7 +10,7 @@
     "types"
   ],
   "scripts": {
-    "build": "npm run clean && npm run makeDir && npm run copyFiles",
+    "build": "npm run clean && npm run makeDir && npm run copyFiles && npm run test",
     "clean": "rimraf dist",
     "makeDir": "mkdir dist",
     "copyFiles": "cp -r src/* dist",
