@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Overlay, Wrapper, CloseButton } from './index.styles';
-import type { ModalProps } from '@/types/modal';
+import type { ModalProps } from '../types/modal';
 
 const Modal = ({ children, onClose }: ModalProps) => {
 	const [hideModal, setHideModal] = useState<boolean>(false);
