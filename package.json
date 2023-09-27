@@ -1,8 +1,8 @@
 {
   "name": "@simonhudson/modal",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Accessible React modal component",
-  "main": "dist/index.ts",
+  "main": "index.ts",
   "files": [
     "__tests__",
     "dist",
@@ -10,12 +10,14 @@
     "types"
   ],
   "scripts": {
-    "build": "npm run clean && npm run makeDir && npm run copyFiles && npm run test",
+    "build": "npm run clean && npm run cleanTranspiled && npm run makeDir && npm run tsc && npm run copyFiles && npm run test && npm run cleanTranspiled",
     "clean": "rimraf dist",
+    "cleanTranspiled": "rimraf --glob src/**/*.js",
     "makeDir": "mkdir dist",
-    "copyFiles": "cp -r src/* dist",
+    "copyFiles": "cp -r src/*.js dist",
     "test": "jest __tests__",
-    "test:coverage": "jest --coverage"
+    "test:coverage": "jest --coverage",
+    "tsc": "tsc ./src/index.styles.ts ./src/index.tsx --jsx react --esModuleInterop true"
   },
   "repository": {
     "type": "git",
@@ -36,8 +38,7 @@
   "dependencies": {
     "polished": "^4.2.2",
     "react": "^18.2.0",
-    "styled-components": "^6.0.8",
-    "typescript": "^5.2.2"
+    "styled-components": "^6.0.8"
   },
   "devDependencies": {
     "@babel/preset-env": "^7.22.20",
@@ -55,7 +56,8 @@
     "jest-extended": "^4.0.1",
     "rimraf": "^5.0.5",
     "ts-jest": "^29.1.1",
-    "ts-node": "^10.9.1"
+    "ts-node": "^10.9.1",
+    "typescript": "^5.2.2"
   },
   "directories": {
     "test": "test"
