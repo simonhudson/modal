@@ -1,10 +1,6 @@
 {
   "name": "@simonhudson/modal",
-<<<<<<< HEAD
   "version": "0.0.3",
-=======
-  "version": "0.0.2",
->>>>>>> main
   "description": "Accessible React modal component",
   "main": "index.ts",
   "files": [
@@ -14,7 +10,6 @@
     "types"
   ],
   "scripts": {
-<<<<<<< HEAD
     "build": "npm run clean:pre && npm run makeDir && npm run transpile && npm run copy && npm run clean:post && npm run test",
     "clean:pre": "rimraf dist && rimraf --glob src/**/*.js",
     "makeDir": "mkdir dist",
@@ -23,16 +18,6 @@
     "test": "jest __tests__",
     "test:coverage": "jest --coverage",
     "clean:post": "rimraf --glob dist/**/*.{ts,tsx} && rimraf --glob src/**/*.js"
-=======
-    "build": "npm run clean && npm run cleanTranspiled && npm run makeDir && npm run tsc && npm run copyFiles && npm run test && npm run cleanTranspiled",
-    "clean": "rimraf dist",
-    "cleanTranspiled": "rimraf --glob src/**/*.js",
-    "makeDir": "mkdir dist",
-    "copyFiles": "cp -r src/*.js dist",
-    "test": "jest __tests__",
-    "test:coverage": "jest --coverage",
-    "tsc": "tsc ./src/index.styles.ts ./src/index.tsx --jsx react --esModuleInterop true"
->>>>>>> main
   },
   "repository": {
     "type": "git",
